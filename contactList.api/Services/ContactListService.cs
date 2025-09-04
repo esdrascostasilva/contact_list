@@ -19,7 +19,7 @@ public class ContactListService : IContactListService
         var contact = await _contactRepository.Create(contactPerson);
 
         if (contact == null)
-            throw new Exception("Ocorreu um problema ao criar o ocntato na sua lista.");
+            throw new Exception("Ocorreu um problema ao criar o contato na sua lista.");
 
         var contactResponse = new ResponseContactPerson
         {

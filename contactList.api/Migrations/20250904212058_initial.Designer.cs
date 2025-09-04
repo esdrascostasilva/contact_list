@@ -12,7 +12,7 @@ using contactList.api.Data;
 namespace contactList.api.Migrations
 {
     [DbContext(typeof(ContactContext))]
-    [Migration("20250904211149_initial")]
+    [Migration("20250904212058_initial")]
     partial class initial
     {
         /// <inheritdoc />

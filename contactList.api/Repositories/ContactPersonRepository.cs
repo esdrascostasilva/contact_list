@@ -19,7 +19,7 @@ public class ContactPersonRepository : IContactPersonRepository
     {
         var contact = new ContactPerson
         {
-            Id = contactPerson.Id,
+            Id = Guid.NewGuid(),
             Name = contactPerson.Name,
             Phone = contactPerson.Phone,
             Phone2 = contactPerson.Phone2,
@@ -28,6 +28,7 @@ public class ContactPersonRepository : IContactPersonRepository
             Group = contactPerson.Group
         };
 
+        _context.Contacts.Add(contact);
         await _context.SaveChangesAsync();
 
         return contact;

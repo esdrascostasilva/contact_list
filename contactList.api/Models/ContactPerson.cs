@@ -4,7 +4,7 @@ namespace contactList.api.Models;
 
 public class ContactPerson
 {
-    public required Guid Id { get; set; }
+    public Guid Id { get; set; }
     public required string Name { get; set; }
     public required string Phone { get; set; }
     public string? Phone2 { get; set; }
