@@ -1,4 +1,8 @@
 using contactList.api.Data;
+using contactList.api.Repositories;
+using contactList.api.Repositories.Interfaces;
+using contactList.api.Services;
+using contactList.api.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +19,10 @@ builder.Services.AddDbContext<ContactContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+// Registrando DI
+builder.Services.AddScoped<IContactPersonRepository, ContactPersonRepository>();
+builder.Services.AddScoped<IContactListService, ContactListService>();
 
 var app = builder.Build();
 
