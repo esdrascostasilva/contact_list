@@ -1,6 +1,6 @@
 using System;
 
-namespace contactList.api.Model;
+namespace contactList.api.Models;
 
 public class ContactPerson
 {
