@@ -15,7 +15,7 @@ public class ContactPersonRepository : IContactPersonRepository
         _context = contactContext;
     }
 
-    public async Task<bool> Create(ContactPerson contactPerson)
+    public async Task<ContactPerson> Create(ContactPerson contactPerson)
     {
         var contact = new ContactPerson
         {
@@ -30,7 +30,7 @@ public class ContactPersonRepository : IContactPersonRepository
 
         await _context.SaveChangesAsync();
 
-        return true;
+        return contact;
     }
 
     public async Task<List<ContactPerson>> GetAll()
