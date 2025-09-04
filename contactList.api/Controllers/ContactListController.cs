@@ -37,7 +37,7 @@ namespace contactList.api.Controllers
         {
             var contact = await _contactService.CreateContactAsync(requestContact);
 
-            return CreatedAtAction(nameof(GetContactByName), contact);
+            return Ok();
         }
 
         [HttpPut("{id}")]
